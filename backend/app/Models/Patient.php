@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Patient extends Model
 {
+    use Notifiable;
+
     protected $fillable = [
         'full_name',
         'email',
@@ -15,6 +18,7 @@ class Patient extends Model
     ];
 
     protected $appends = ['document_photo_url'];
+    protected $hidden = ['document_photo_path'];
 
     public function getDocumentPhotoUrlAttribute(): ?string
     {
@@ -23,5 +27,9 @@ class Patient extends Model
         }
         return url('storage/' . $this->document_photo_path);
     }
-    
+
+    public function routeNotificationForMail(): string
+    {
+        return $this->email;
+    }
 }
