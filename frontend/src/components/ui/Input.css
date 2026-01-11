@@ -1,0 +1,64 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  
+  .input-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .input-field {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 0.0625rem solid #d1d5db;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    outline: none;
+  }
+  
+  .input-field::placeholder {
+    color: #9ca3af;
+  }
+  
+  .input-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 0.1875rem rgba(59, 130, 246, 0.15);
+  }
+  
+  /* Estado de error */
+  .input-group.has-error .input-field {
+    border-color: #ef4444;
+  }
+  
+  .input-group.has-error .input-field:focus {
+    box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.15);
+  }
+  
+  .input-error {
+    font-size: 0.8rem;
+    color: #ef4444;
+    animation: shake 0.3s ease;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-0.25rem); }
+    75% { transform: translateX(0.25rem); }
+  }
+  
+ 
+  
+  @media (max-width: 30rem) {
+    .input-field {
+      padding: 0.625rem 0.875rem;
+      font-size: 0.95rem;
+    }
+  
+    .input-label {
+      font-size: 0.8rem;
+    }
+  }

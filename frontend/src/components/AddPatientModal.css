@@ -1,0 +1,52 @@
+.add-patient-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .phone-row {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .phone-row .phone-code {
+    flex: 0 0 5.5rem;
+  }
+  
+  .phone-row .phone-number {
+    flex: 1;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid #e5e7eb;
+  }
+  
+
+  
+  @media (max-width: 30rem) {
+    .add-patient-form {
+      gap: 1rem;
+    }
+  
+    .phone-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .phone-row .phone-code {
+      flex: 1;
+    }
+  
+    .form-actions {
+      flex-direction: column-reverse;
+    }
+  
+    .form-actions button {
+      width: 100%;
+    }
+  }

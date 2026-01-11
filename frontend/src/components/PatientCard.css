@@ -1,0 +1,168 @@
+.patient-card {
+    background: #ffffff;
+    border: 0.0625rem solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05);
+  }
+  
+  .patient-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0.25rem 0.75rem rgba(59, 130, 246, 0.15);
+  }
+  
+  .patient-card.expanded {
+    border-color: #3b82f6;
+  }
+  
+  .patient-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .patient-photo-container {
+    flex-shrink: 0;
+  }
+  
+  .patient-photo {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+  
+  .patient-photo-placeholder {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 0.5rem;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.75rem;
+  }
+  
+  .patient-name-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+  }
+  
+  .patient-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .expand-icon {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+  
+  /* Detalles expandidos */
+  .patient-card-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid #e5e7eb;
+    animation: slideDown 0.2s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-0.625rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .detail-label {
+    color: #6b7280;
+    font-size: 0.9rem;
+    min-width: 4.5rem;
+  }
+  
+  .detail-value {
+    color: #1f2937;
+    font-size: 0.9rem;
+    font-weight: 500;
+    word-break: break-word;
+  }
+  
+
+  @media (max-width: 48rem) {
+    .patient-card {
+      padding: 0.875rem;
+    }
+  
+    .patient-photo,
+    .patient-photo-placeholder {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+  
+    .patient-name {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  @media (max-width: 30rem) {
+    .patient-card {
+      padding: 0.75rem;
+    }
+  
+    .patient-card-header {
+      gap: 0.75rem;
+    }
+  
+    .patient-photo,
+    .patient-photo-placeholder {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  
+    .patient-name {
+      font-size: 0.95rem;
+    }
+  
+    .detail-row {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  
+    .detail-label {
+      min-width: auto;
+      font-size: 0.8rem;
+    }
+  
+    .detail-value {
+      font-size: 0.85rem;
+    }
+  }

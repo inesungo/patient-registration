@@ -1,0 +1,135 @@
+.status-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1100;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .status-modal {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    max-width: 20rem;
+    width: 100%;
+    box-shadow: 0 1.25rem 3.125rem rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Icono */
+  .status-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* Icono de éxito */
+  .status-icon-success {
+    background: #dcfce7;
+    color: #16a34a;
+    animation: popIn 0.4s ease;
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Icono de error */
+  .status-icon-error {
+    background: #fee2e2;
+    color: #dc2626;
+    animation: shake 0.4s ease;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-0.5rem); }
+    40% { transform: translateX(0.5rem); }
+    60% { transform: translateX(-0.5rem); }
+    80% { transform: translateX(0.5rem); }
+  }
+  
+  /* Título */
+  .status-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem;
+  }
+  
+  /* Mensaje */
+  .status-message {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+  
+  
+  .status-modal button {
+    margin-top: 1rem;
+  }
+  
+  .status-message + button {
+    margin-top: 0;
+  }
+  
+  
+  
+  @media (max-width: 30rem) {
+    .status-modal {
+      padding: 1.5rem;
+    }
+  
+    .status-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 1.75rem;
+    }
+  
+    .status-title {
+      font-size: 1.1rem;
+    }
+  
+    .status-message {
+      font-size: 0.9rem;
+    }
+  }
