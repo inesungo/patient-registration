@@ -18,25 +18,25 @@ export function PatientCard({ patient }: PatientCardProps) {
       className={`patient-card ${isExpanded ? 'expanded' : ''}`}
       onClick={toggleExpand}
     >
-      {/* Contenido colapsado */}
-      <div className="patient-card-header">
-        <div className="patient-photo-container">
-          {patient.document_photo_url ? (
-            <img
-              src={patient.document_photo_url}
-              alt={`Documento de ${patient.full_name}`}
-              className="patient-photo"
-            />
-          ) : (
-            <div className="patient-photo-placeholder">
-              <span>Sin foto</span>
-            </div>
-          )}
-        </div>
-        <div className="patient-name-container">
-          <h3 className="patient-name">{patient.full_name}</h3>
-          <span className="expand-icon">{isExpanded ? '▲' : '▼'}</span>
-        </div>
+      {/* Document photo */}
+      <div className="patient-photo-container">
+        {patient.document_photo_url ? (
+          <img
+            src={patient.document_photo_url}
+            alt={`Document of ${patient.full_name}`}
+            className="patient-photo"
+          />
+        ) : (
+          <div className="patient-photo-placeholder">
+            <span>No photo</span>
+          </div>
+        )}
+      </div>
+
+      {/* Patient name */}
+      <div className="patient-name-row">
+        <h3 className="patient-name">{patient.full_name}</h3>
+        <span className="expand-icon">{isExpanded ? '▲' : '▼'}</span>
       </div>
 
       {/* Contenido expandido al onclick */}
@@ -47,7 +47,7 @@ export function PatientCard({ patient }: PatientCardProps) {
             <span className="detail-value">{patient.email}</span>
           </div>
           <div className="detail-row">
-            <span className="detail-label">Teléfono:</span>
+            <span className="detail-label">Phone:</span>
             <span className="detail-value">
               {patient.phone_country_code} {patient.phone_number}
             </span>

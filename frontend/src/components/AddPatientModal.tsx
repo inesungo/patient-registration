@@ -218,7 +218,7 @@ export function AddPatientModal({ isOpen, onClose, onSuccess }: AddPatientModalP
             type="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder="ejemplo@gmail.com"
+            placeholder="example@gmail.com"
             error={errors.email}
           />
 

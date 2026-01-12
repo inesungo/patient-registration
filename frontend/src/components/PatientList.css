@@ -1,91 +1,103 @@
 .patient-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  /* Estado vacío */
-  .empty-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem;
-    text-align: center;
-  }
-  
-  .empty-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .empty-title {
-    color: #1f2937;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-  }
-  
-  .empty-text {
-    color: #6b7280;
-    font-size: 0.95rem;
-    margin: 0;
-  }
-  
-  /* Estado error */
-  .error-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem;
-    gap: 1rem;
-  }
-  
-  .error-text {
-    color: #dc2626;
-    font-size: 1rem;
-    margin: 0;
-  }
-  
-  .retry-button {
-    background: #3b82f6;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s ease;
-  }
-  
-  .retry-button:hover {
-    background: #2563eb;
-  }
-  
-  .retry-button:active {
-    transform: scale(0.98);
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
 
-  
-  @media (max-width: 30rem) {
-    .empty-container,
-    .error-container {
-      padding: 2rem 1rem;
-    }
-  
-    .empty-icon {
-      font-size: 2.5rem;
-    }
-  
-    .empty-title {
-      font-size: 1.1rem;
-    }
-  
-    .empty-text,
-    .error-text {
-      font-size: 0.9rem;
-    }
+/* Estado vacío */
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.empty-text {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Estado error */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  gap: 1rem;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.retry-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #2563eb;
+}
+
+.retry-button:active {
+  transform: scale(0.98);
+}
+
+
+
+
+@media (max-width: 48rem) {
+  .patient-list {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+
+@media (max-width: 30rem) {
+  .patient-list {
+    grid-template-columns: 1fr;
+  }
+
+  .empty-container,
+  .error-container {
+    padding: 2rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 2.5rem;
+  }
+
+  .empty-title {
+    font-size: 1.1rem;
+  }
+
+  .empty-text,
+  .error-text {
+    font-size: 0.9rem;
+  }
+}

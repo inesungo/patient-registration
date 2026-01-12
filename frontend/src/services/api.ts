@@ -12,7 +12,7 @@ export async function getPatients(): Promise<Patient[]> {
   });
 
   if (!response.ok) {
-    throw new Error('Error al cargar los pacientes');
+    throw new Error('Failed to load patients');
   }
 
   const data: PatientsResponse = await response.json();

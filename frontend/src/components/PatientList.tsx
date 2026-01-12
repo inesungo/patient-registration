@@ -22,7 +22,7 @@ export const PatientList = forwardRef<PatientListRef>((_props, ref) => {
       const data = await getPatients();
       setPatients(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error desconocido');
+      setError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
       setIsLoading(false);
     }
@@ -49,7 +49,7 @@ export const PatientList = forwardRef<PatientListRef>((_props, ref) => {
       <div className="error-container">
         <p className="error-text">❌ {error}</p>
         <button className="retry-button" onClick={loadPatients}>
-          Reintentar
+          Retry
         </button>
       </div>
     );
@@ -60,9 +60,9 @@ export const PatientList = forwardRef<PatientListRef>((_props, ref) => {
     return (
       <div className="empty-container">
         <div className="empty-icon">📋</div>
-        <h3 className="empty-title">No hay pacientes registrados</h3>
+        <h3 className="empty-title">No patients registered</h3>
         <p className="empty-text">
-          Los pacientes que registres aparecerán aquí.
+          Patients you register will appear here.
         </p>
       </div>
     );
